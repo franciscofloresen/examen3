@@ -1,0 +1,27 @@
+name: Print Info
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-info:
+    name: Print Info
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Print Full Name
+        run: echo "Mi nombre completo es Francisco Flores"
+
+      - name: Print Node.js Version
+        run: node --version
+
+      - name: Print Student ID
+        run: echo "Mi expediente es 728238"
